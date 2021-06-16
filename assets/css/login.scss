@@ -1,0 +1,53 @@
+.login {
+    background-color: #7a8b8b;
+    color: #FFFFFF;
+    position: absolute;
+    box-shadow: 0px 1px 5px 0px  #585353;
+    top: 50%;
+    left: 50%;
+    width: 400px;
+    height: 550px;
+    margin: -275px 0 0 -200px;
+
+    img {
+        margin: 20px auto;
+        display: block;
+    }
+    input {
+        display: block;
+        width: 70%;
+        border-radius: .25rem;
+        margin: auto auto 25px;
+        box-shadow: 0px 1px 5px 0px #1f615b;
+    }
+    .input-text {
+        @extend input;
+        height: 40px;
+        border: 0;
+        border-color: #FFFFFF;
+    }
+    .input-checkbox {
+        display: inline-block;
+        width: 5%;
+        height: 18px;
+        margin: 5px 10px 15px 60px;
+        border-radius: .25rem;
+    }
+    .input-button {
+        @extend input;
+        background-color: #48bbb5;
+        height: 40px;
+        border: 0;
+        color: #FFFFFF;
+        cursor: pointer;
+    }
+    .login-label {
+        text-align: center;
+        margin-bottom: 30px;
+        font-size: 14px;
+    }
+} 
+
+input:focus {
+    outline: none;
+}

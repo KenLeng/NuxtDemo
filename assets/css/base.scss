@@ -1,0 +1,71 @@
+h2 {
+    font-size: 24px;
+}
+
+.flex-div {
+    display: flex;
+}
+
+.flex-row {
+    flex-direction: row;
+}
+
+.flex-column {
+    flex-direction: column;
+}
+
+.grid-div {
+    display: grid;
+}
+
+.inline-grid-div {
+    display: inline-grid;
+}
+
+.justify-end {
+    justify-content: flex-end;
+}
+
+.justify-around {
+    justify-content: space-around;
+}
+
+.justify-between {
+    justify-content: space-between;
+}
+
+.justify-evenly {
+    justify-content: space-evenly;
+}
+
+.items-center {
+    align-items: center;
+}
+
+.w-full {
+    width: 100%;
+}
+
+.h-full {
+    height: 100%;
+}
+
+.align-middle {
+    vertical-align: middle;
+}
+
+.align-top {
+    vertical-align: top;
+}
+
+.align-bottom {
+    vertical-align: bottom;
+}
+
+.text-right {
+    text-align: right;
+}
+
+.text-gray {
+    color: #aab6a1;
+}
