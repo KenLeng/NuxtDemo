@@ -74,31 +74,36 @@ export default {
             active: false,
             sideItemRef: {
                 userData: [
-                        {
-                            img: deviation,
-                            menuId: 'userData',
-                            id: 'userDataOverview',
-                            name: '用戶數據總覽'
-                        },
-                        {
-                            img: people,
-                            menuId: 'userData',
-                            id: 'memberFocus',
-                            name: '會員分眾'
-                        },
-                        {
-                            img: article,
-                            menuId: 'userData',
-                            id: 'contentData',
-                            name: '內容數據'
-                        }
+                    {
+                        img: deviation,
+                        menuId: 'userData',
+                        id: 'userDataOverview',
+                        name: '用戶數據總覽'
+                    },
+                    {
+                        img: people,
+                        menuId: 'userData',
+                        id: 'memberFocus',
+                        name: '會員分眾'
+                    },
+                    {
+                        img: article,
+                        menuId: 'userData',
+                        id: 'contentData',
+                        name: '內容數據'
+                    }
                 ],
                 marketingTool: {
 
                 },
-                setting: {
-
-                }
+                setting: [
+                    {
+                        img: '',
+                        menuId: 'setting',
+                        id: 'webSocket',
+                        name: 'webSocket'
+                    }
+                ]
             },
             sideItems: [],      //左側欄項目
             activeItem: '',     //選中的項目

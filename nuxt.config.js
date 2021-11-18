@@ -25,6 +25,7 @@ export default {
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
+    "@/plugins/axios"
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
@@ -36,9 +37,25 @@ export default {
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
+    "@nuxtjs/axios"
   ],
+
+  axios: {
+    proxy: true
+  },
+
+  // To resolve axios in nuxt caused CORS problem
+  proxy: {
+    '/api': 'http://localhost:3000/'
+  },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
-  }
+    vendor: ["axios"]
+  },
+
+  serverMiddleware: [
+    // API middleware
+    '@/server/index.js'
+  ]
 }
