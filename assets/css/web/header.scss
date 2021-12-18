@@ -1,0 +1,39 @@
+.web-header {
+    .header-content {
+        height: 170px;
+        .banner {
+            width: 100%;
+            height: inherit;
+            margin: auto;
+            background-image: url('@/assets/images/banner.png');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            position: absolute;
+            opacity: .2;
+        }
+        .logo {
+            width: 190px;
+            height: inherit;
+            margin: auto;
+            background-image: url('@/assets/images/logo.png');
+            background-size: contain;
+            background-repeat: no-repeat;
+        }
+    }
+    
+}
+
+.web-nav {
+    display: flex;
+    background-color: $primary-color;
+    width: 100%;
+    justify-content: center;
+    padding: 10px 0px;
+    box-shadow: 0px 2px 1px #D1C9C7;
+    .nav-item {
+        margin: 10px 30px;
+        font-weight: bold;
+        color: #fff;
+    }
+}

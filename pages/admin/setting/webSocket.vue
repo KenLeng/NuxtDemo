@@ -1,7 +1,7 @@
 <template>
     <div>
         <h2>{{ message }}</h2>
-        <button v-for="id in buttonGroup">user: {{ id }}</button>
+        <button v-for="(id, index) in buttonGroup" :key="index">user: {{ id }}</button>
         <div>
             <button @click="socketConnect">連線</button>
             <button @click="closews">關掉websocket</button>

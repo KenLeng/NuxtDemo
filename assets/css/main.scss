@@ -1,7 +1,6 @@
 html {
     font-family:
-        'Source Sans Pro',
-        -apple-system,
+        "Microsoft JhengHei",
         BlinkMacSystemFont,
         'Segoe UI',
         Roboto,
@@ -22,7 +21,7 @@ body {
     height: 100%;
     margin: 0px;
     padding: 0px;
-    overflow: scroll;
+    overflow-y: auto;
 }
 // *,
 // *::before,
@@ -33,5 +32,9 @@ body {
 @import '@/assets/css/base.scss';
 @import '@/assets/css/login.scss';
 @import '@/assets/css/default.scss';
+@import '@/assets/css/variable.scss';
 
 @import '@/assets/css/layout/member_focus.scss';
+
+@import '@/assets/css/web/header.scss';
+@import '@/assets/css/web/footer.scss';
