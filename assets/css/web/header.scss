@@ -29,11 +29,38 @@
     background-color: $primary-color;
     width: 100%;
     justify-content: center;
-    padding: 10px 0px;
-    box-shadow: 0px 2px 1px #D1C9C7;
+    padding: 5px 0px;
+    box-shadow: 0px 2px 1px $gray-color;
     .nav-item {
-        margin: 10px 30px;
+        padding: 10px 30px;
         font-weight: bold;
         color: #fff;
+        &.dropdown {
+            position: relative;
+            &:hover {
+                cursor: pointer;
+                .dropdown-content {
+                    display: block;
+                }
+            }
+            .dropdown-content {
+                display: none;
+                position: absolute;
+                min-width: 150px;
+                top: 35px;
+                left: 0px;
+                background-color: $gray-color;
+                box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+                z-index: 1;
+                div {
+                    border-bottom: 1px solid #fff;
+                    padding: 5px 0;
+                    text-align: center;
+                    &:hover {
+                        background-color: rgb(223, 223, 168)
+                    }
+                }
+            }
+        }
     }
 }
