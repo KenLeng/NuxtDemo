@@ -16,10 +16,10 @@
     "express": "^4.17.1",
     "moment": "^2.29.1",
     "nuxt": "^2.15.3",
+    "vue-fb-customer-chat": "^0.2.0",
     "ws": "^8.2.3"
   },
   "devDependencies": {
-    "fibers": "^5.0.0",
     "sass": "^1.32.12",
     "sass-loader": "^10.1.1"
   }

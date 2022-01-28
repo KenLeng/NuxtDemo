@@ -46,18 +46,37 @@
             .dropdown-content {
                 display: none;
                 position: absolute;
-                min-width: 150px;
-                top: 35px;
+                min-width: 200px;
+                top: 40px;
                 left: 0px;
                 background-color: $gray-color;
                 box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
                 z-index: 1;
-                div {
+                .content-list {
                     border-bottom: 1px solid #fff;
-                    padding: 5px 0;
+                    padding: 10px 0;
                     text-align: center;
+                    .dropdown-item {
+                        display: none;
+                    }
                     &:hover {
-                        background-color: rgb(223, 223, 168)
+                        background-color: rgb(223, 223, 168);
+                        .dropdown-item {
+                            display: block;
+                            position: absolute;
+                            min-width: 200px;
+                            background-color: $gray-color;
+                            left: 200px;
+                            top: 3%;
+                            .item-list {
+                                border-bottom: 1px solid #fff;
+                                text-align: center;
+                                padding: 10px 0;
+                                &:hover {
+                                    background-color: rgb(223, 223, 168)
+                                }
+                            }
+                        }
                     }
                 }
             }

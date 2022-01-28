@@ -1,0 +1,19 @@
+.list-area {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    .p-item {
+        padding: 20px 15px;
+        cursor: pointer;
+        div {
+            text-align: center;
+            padding-top: 15px;
+        }
+        img {
+            transition-duration: .2s;
+            &:hover {
+                transform: scale(1.1);
+            }
+        }
+    }
+}

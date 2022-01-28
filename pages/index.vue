@@ -1,6 +1,6 @@
 <template>
     <div>
-        
+        首頁在這
     </div>
 </template>
 
