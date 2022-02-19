@@ -14,7 +14,7 @@ router.get('/test2', (req, res, next) => {
     next()
 })
 
-router.get('/get/:category/:type', async (req, res, next) => {
+router.get('/:category/:type', async (req, res, next) => {
     let result = await javaSideAPI.get(`/${req.params.category}/${req.params.type}`)
     console.log(result)
     res.json(result.data)

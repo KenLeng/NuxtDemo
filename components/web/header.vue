@@ -1,38 +1,53 @@
 <template>
     <div class="web-header">
         <div class="header-content">
-            <div class="banner"></div>
-            <div class="logo"></div>
+            <div class="banner" @click="$router.push('/')"></div>
+            <div class="logo" ></div>
         </div>
         <nav class="web-nav">
-            <a class="nav-item" href="javascript:void(0)" @click="$router.push('/web/about')">
-                關於
-                <i class="far fa-info-circle"></i>
-            </a>
-            <div class="nav-item dropdown">
-                商品款式<i class="fas fa-rings-wedding"></i>
-                <div class="dropdown-content">
-                    <div class="content-list" v-for="(category, index) in categories"
-                        :key="index">
-                        <span>{{ category.name }}</span>
-                        <div class="dropdown-item">
-                            <div class="item-list" v-for="(data, index) in category.sencondCategories"
-                                :key="index"
-                                @click="redirectProduct(types.category, data.category)">
-                                <span>{{ data.name }}</span>
-                            </div>
-                        </div>
+            <div class="nav-wrap">
+                <a class="nav-item" href="javascript:void(0)" @click="$router.push('/web/about')">
+                    <div>
+                        <i class="far fa-info-circle"></i>
+                       關於
                     </div>
+                </a>
+            </div>
+            <div class="nav-wrap">
+                <div class="nav-item dropdown">
+                    <div>
+                        <i class="fas fa-rings-wedding"></i>
+                        商品款式
+                    </div>
+                    <ul class="dropdown-content">
+                        <li class="content-list" v-for="(category, index) in categories" :key="index">
+                            <ul class="dropdown-item">
+                                <li class="item-list" v-for="(secondCat, index) in category.secondCategories" :key="index"
+                                    @click="redirectProduct(category.category, secondCat.category)">
+                                    {{ secondCat.name }}
+                                </li>
+                            </ul>
+                            {{ category.name }}
+                        </li>
+                    </ul>
                 </div>
             </div>
-            <a class="nav-item" href="javascript:void(0)" @click="$router.push('/web/info')">
-                店鋪資訊
-                <i class="fas fa-map-marker-alt"></i>
-            </a>
-            <a class="nav-item" href="javascript:void(0)" @click="$router.push('/web/problem')">
-                常見問題
-                <i class="far fa-question-circle"></i>
-            </a>
+            <div class="nav-wrap">
+                <a class="nav-item" href="javascript:void(0)" @click="$router.push('/web/info')">
+                    <div>
+                        <i class="fas fa-map-marker-alt"></i>
+                        店鋪資訊
+                    </div>
+                </a>
+            </div>
+            <div class="nav-wrap">
+                <a class="nav-item" href="javascript:void(0)" @click="$router.push('/web/problem')">
+                    <div>
+                        <i class="far fa-question-circle"></i>
+                        常見問題
+                    </div>
+                </a>
+            </div>
         </nav>
     </div>
 </template>
@@ -47,7 +62,7 @@ export default {
                 {
                     name: '黃金',
                     category: 'golden',
-                    sencondCategories: [
+                    secondCategories: [
                         { name: '黃金戒指（女）', category: 'wring'},
                         { name: '黃金戒指（男）', category: 'mring'},
                         { name: '黃金對戒', category: 'couplering'},
@@ -57,22 +72,24 @@ export default {
                 { 
                     name: '白金',
                     category: 'platinum',
-                    sencondCategories: [
-                        { name: '白金戒指', category: 'test' }
+                    secondCategories: [
+                        { name: '白金戒指', category: 'test' },
+                        { name: '白金項鍊', category: 'platinumtest' }
                     ]
                 },
                 {
                     name: '鑽石',
                     category: 'diamond',
-                    sencondCategories: []
+                    secondCategories: [
+                        { name: '求婚鑽戒', category: 'test' }
+                    ]
                 },
                  {
                     name: '對戒',
                     category: 'couple',
-                    sencondCategories: []
+                    secondCategories: []
                 }
-            ],
-            condition: {}
+            ]
         }
     },
     async mounted() {
@@ -84,7 +101,8 @@ export default {
             let condition = JSON.stringify({ category, type })
             document.cookie = `_condition=${condition}`
             this.$router.push({
-                path: '/web/products'
+                name: 'web-products',
+                params: { category, type }
             })
         }
     }

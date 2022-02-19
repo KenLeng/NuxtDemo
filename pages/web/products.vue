@@ -1,11 +1,13 @@
 <template>
-    <div class="content">
-        <div>
-            商品款式
-            <div class="list-area">
-                <div v-for="(data, index) in displayProducts" :key="index" class="p-item">
-                    <img :src="data.img" alt="test" width="300"/>
-                    <div>{{ data.name }}</div>
+    <div class="content-wrap">
+        <div class="content">
+            <div class="product-wrap">
+                <div class="product-map">{{  }} > {{ test }}</div>
+                <div class="list-area">
+                    <div v-for="(data, index) in displayProducts" :key="index" class="p-item">
+                        <img :src="data.img" alt="image" width="300"/>
+                        <div>{{ data.name }}</div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -20,7 +22,6 @@ export default {
     name: 'products',
     data() {
         return {
-            category: 'all',
             products: {
                 'golden': [
                     {
@@ -53,13 +54,25 @@ export default {
                     }
                 ]
             },
-            displayProducts: []
+            displayProducts: [],
+
+        }
+    },
+
+    watch: {
+        '$route.params': {
+            handler: function () {
+                console.log('watch...')
+            },
+            deep: true,
+            immediate: true
         }
     },
 
     mounted() {
-        console.log('products mounted...')
-        this.getProducts()
+        console.log('products mounted...', this.$route)
+        // this.getProducts()
+        // 這是寫死的
         this.displayProducts = this.products['golden']
     },
 

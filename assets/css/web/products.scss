@@ -1,3 +1,10 @@
+.product-wrap {
+    display: flex;
+    flex-direction: column;
+    .product-map {
+        margin-top: 10px;
+    }
+}
 .list-area {
     display: flex;
     flex-wrap: wrap;

@@ -28,52 +28,77 @@
     display: flex;
     background-color: $primary-color;
     width: 100%;
+    height: 60px;
     justify-content: center;
-    padding: 5px 0px;
+    align-items: center;
     box-shadow: 0px 2px 1px $gray-color;
-    .nav-item {
-        padding: 10px 30px;
-        font-weight: bold;
-        color: #fff;
-        &.dropdown {
-            position: relative;
+    .nav-wrap {
+        height: 100%;
+        &:hover {
+            border: 1px solid rgba(255, 255, 255, .7);
+            background-color: rgba(0, 0, 0, .7);
+            color: #fff;
+        }
+        .nav-item {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 220px;
+            height: 100%;
+            padding: 0px 60px;
+            font-weight: bold;
+            color: #000000;
+            i {
+                margin-right: -1em;
+                transform: scale(0);
+                transition: .2s;
+            }
             &:hover {
-                cursor: pointer;
-                .dropdown-content {
-                    display: block;
+                color: #fff;
+                i {
+                    margin-right: 0;
+                    transform: scale(1);
                 }
             }
-            .dropdown-content {
-                display: none;
-                position: absolute;
-                min-width: 200px;
-                top: 40px;
-                left: 0px;
-                background-color: $gray-color;
-                box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-                z-index: 1;
-                .content-list {
-                    border-bottom: 1px solid #fff;
-                    padding: 10px 0;
-                    text-align: center;
-                    .dropdown-item {
-                        display: none;
+            &.dropdown {
+                position: relative;
+                &:hover {
+                    cursor: pointer;
+                    .dropdown-content {
+                        display: block;
                     }
-                    &:hover {
-                        background-color: rgb(223, 223, 168);
+                }
+                .dropdown-content {
+                    display: none;
+                    position: absolute;
+                    min-width: 220px;
+                    top: 60px;
+                    background-color: rgba(157, 151, 123, .7);
+                    box-shadow: 5px 5px 15px rgba(0,0,0,0.5);
+                    z-index: 2;
+                    .content-list {
+                        border-bottom: 1px solid #fff;
+                        text-align: center;
+                        padding: 10px;
                         .dropdown-item {
-                            display: block;
-                            position: absolute;
-                            min-width: 200px;
-                            background-color: $gray-color;
-                            left: 200px;
-                            top: 3%;
-                            .item-list {
-                                border-bottom: 1px solid #fff;
-                                text-align: center;
-                                padding: 10px 0;
-                                &:hover {
-                                    background-color: rgb(223, 223, 168)
+                            display: none;
+                        }
+                        &:hover {
+                            background-color: rgb(95, 89, 68, .7);
+                            .dropdown-item {
+                                display: block;
+                                position: absolute;
+                                min-width: 220px;
+                                background-color: rgba(157, 151, 123, .7);
+                                left: 100%;
+                                transform: translateY(-10px);
+                                .item-list {
+                                    border-bottom: 1px solid #fff;
+                                    text-align: center;
+                                    padding: 10px;
+                                    &:hover {
+                                        background-color: rgb(95, 89, 68, .7);
+                                    }
                                 }
                             }
                         }
@@ -82,4 +107,5 @@
             }
         }
     }
+    
 }

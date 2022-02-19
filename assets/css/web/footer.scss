@@ -1,10 +1,10 @@
 .container {
     width: 100%;
-    background-color: $gray-color;
+    background-color: $black-color;
     position: absolute;
-    margin-top: 25px;
     .copy-right {
         text-align: center;
         padding: 7px;
+        color: #fff
     }
 }
