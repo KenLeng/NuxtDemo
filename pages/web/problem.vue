@@ -4,7 +4,7 @@
             <div class="problem-wrap">
                 <div class="each-problem">
                     <div>
-                        <i class="far fa-map-marker-question"></i> 
+                        <i class="fas fa-question-circle"></i>
                         <span>是否為純金 ?</span>
                     </div>
                     <div>
@@ -14,7 +14,7 @@
                 </div>
                 <div class="each-problem">
                     <div>
-                        <i class="far fa-map-marker-question"></i>
+                        <i class="fas fa-question-circle"></i>
                         <span>網路小編回覆時間 ?</span>
                     </div>
                     <div>
@@ -24,7 +24,7 @@
                 </div>
                 <div class="each-problem">
                     <div>
-                        <i class="far fa-map-marker-question"></i>
+                        <i class="fas fa-question-circle"></i>
                         <span>家中有很多金屬飾品，不知道是否為黃金，你們能幫忙鑑定嗎 ?</span>
                     </div>
                     <div>
@@ -34,17 +34,17 @@
                 </div>
                 <div class="each-problem">
                     <div>
-                        <i class="far fa-map-marker-question"></i>
+                        <i class="fas fa-question-circle"></i>
                         <span>請問為什麼黃/白金商品價格每天都會不一樣 ?</span>
                     </div>
                     <div>
                         <i class="fas fa-comments"></i>
-                        <span>因黃/白金本身價格每日會有所波動，根據國際盤所計算出當日價格(計算方式 : 金價 x 金重 + 工資)。</span>
+                        <span>因黃/白金本身價格每日會有所波動，根據國際盤所計算出當日價格 (計算方式 : 金價 x 金重 + 工資)。</span>
                     </div>
                 </div>
                 <div class="each-problem">
                     <div>
-                        <i class="far fa-map-marker-question"></i>
+                        <i class="fas fa-question-circle"></i>
                         <span>店面款式會更多嗎 ?</span>
                     </div>
                     <div>
@@ -54,7 +54,7 @@
                 </div>
                 <div class="each-problem">
                     <div>
-                        <i class="far fa-map-marker-question"></i>
+                        <i class="fas fa-question-circle"></i>
                         <span>付款方式有哪些 ?</span>
                     </div>
                     <div>
@@ -64,7 +64,7 @@
                 </div>
                 <div class="each-problem">
                     <div>
-                        <i class="far fa-map-marker-question"></i>
+                        <i class="fas fa-question-circle"></i>
                         <span>請問除了黃/白金/鑽石還有販賣其他商品嗎 ?</span>
                     </div>
                     <div>
@@ -86,32 +86,43 @@ export default {
 <style lang="scss" scope>
     .content {
         .problem-wrap {
-            width: 1000px;
+            width: 1100px;
             margin: 0 auto;
             position: relative;
             top: 20px;
             .each-problem {
                 display: flex;
                 flex-direction: column;
-                padding: 20px 0;
-                border: 1px solid rgba(157, 151, 123, .7);
-                margin-bottom: 10px;
-                background-color: #fff;
+                margin-bottom: 30px;
                 div:nth-child(odd) {
-                    margin-bottom: 10px;
-                    margin-left: 15px;
+                    position: relative;
+                    left: -50px;
                     font-weight: 700;
-                    font-size: 24px;
+                    font-size: 22px;
+                    background-color: rgb(95 , 89 , 68);
+                    color: #fff;
+                    padding: 12px 0 12px 15px;
+                    border-radius: 15px;
                     span {
-                        color: red;
                         padding-left: 5px;
                     }
                 }
                 div:nth-child(even) {
-                    margin-top: 10px;
-                    margin-left: 15px;
+                    position: relative;
+                    left: 50px;
+                    top: 5px;
+                    font-weight: 700;
+                    font-size: 22px;
+                    background-color: #fff;
+                    color: rgb(95 , 89 , 68);
+                    padding: 12px 0 12px 15px;
+                    border-radius: 15px;
+                    border: 5px dashed rgb(95 , 89 , 68);
                     span {
-                        padding-left: 15px;
+                        padding-left: 5px;
+                    }
+                    b {
+                        color: red;
                     }
                 }
             }
