@@ -1,8 +1,8 @@
 <template>
     <div class="web-header">
         <div class="header-content">
-            <div class="banner" @click="$router.push('/')"></div>
-            <div class="logo" ></div>
+            <div class="banner"></div>
+            <div class="logo" @click="$router.push('/')"></div>
         </div>
         <nav class="web-nav">
             <div class="nav-wrap">

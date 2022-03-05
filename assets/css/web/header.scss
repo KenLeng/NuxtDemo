@@ -9,8 +9,7 @@
             background-size: cover;
             background-repeat: no-repeat;
             background-position: center;
-            position: absolute;
-            opacity: .2;
+            opacity: .3;
         }
         .logo {
             width: 190px;
@@ -19,6 +18,11 @@
             background-image: url('@/assets/images/logo.png');
             background-size: contain;
             background-repeat: no-repeat;
+            cursor: pointer;
+            position: absolute;
+            top: 0px;
+            left: 46%;
+            z-index: 2;
         }
     }
     

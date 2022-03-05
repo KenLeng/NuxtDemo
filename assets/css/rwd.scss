@@ -1,0 +1,90 @@
+$desktop-width: 1280px;
+$pad-pro-width: 1024px;
+$pad-width: 768px;
+$mobile-width: 660px;
+$mini-mobile-width: 360px;
+
+//desktop 1280 ~up
+@mixin desktop-up() {
+  @media all and (min-width: $desktop-width) {
+    @content;
+  }
+}
+//desktop 1280 ~less
+@mixin desktop-less() {
+  @media all and (max-width: $desktop-width) {
+    @content;
+  }
+}
+// desktop 1280 ~ 區間
+@mixin desktop-zone(){
+  @media all and (min-width: $pad-pro-width) {
+    @content;
+  }
+}
+// pad-pro 1024 ~up
+@mixin pad-pro-up() {
+  @media all and (min-width: $pad-pro-width) {
+    @content;
+  }
+}
+// pad-pro 1024 ~less
+@mixin pad-pro-less() {
+  @media all and (max-width: $pad-pro-width) {
+    @content;
+  }
+}
+// pad-pro 1024 ~ 1280 區間
+@mixin pad-pro-zone() {
+  @media all and (min-width: $pad-width) and (max-width: $pad-pro-width) {
+    @content;
+  }
+}
+// pad 768 ~up
+@mixin pad-up() {
+  @media all and (min-width: $pad-width) {
+    @content;
+  }
+}
+// pad 768 ~less
+@mixin pad-less() {
+  @media all and (max-width: $pad-width) {
+    @content;
+  }
+}
+// pad 768 ~ 1024 區間
+@mixin pad-zone() {
+  @media all and (min-width: $mobile-width) and (max-width: $pad-width) {
+    @content;
+  }
+}
+// mobile 480 ~up
+@mixin mobile-up() {
+  @media all and (min-width: $mobile-width) {
+    @content;
+  }
+}
+// mobile 480 ~less
+@mixin mobile-less() {
+  @media all and (max-width: $mobile-width) {
+    @content;
+  }
+}
+// pad 480 ~ 768 區間
+@mixin mobile-zone() {
+  @media all and (min-width: $min-mobile-width) and (max-width: $mobile-width) {
+    @content;
+  }
+}
+// pad 480 ~up
+@mixin min-mobile-up() {
+  @media all and (min-width: $min-mobile-width) {
+    @content;
+  }
+}
+// pad 480 ~less
+@mixin min-mobile-less() {
+  @media all and (max-width: $min-mobile-width) {
+    @content;
+  }
+}
