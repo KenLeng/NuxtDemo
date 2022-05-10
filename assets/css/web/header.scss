@@ -1,6 +1,7 @@
 .web-header {
     .header-content {
         height: 170px;
+        position: relative;
         .banner {
             width: 100%;
             height: inherit;
@@ -21,7 +22,8 @@
             cursor: pointer;
             position: absolute;
             top: 0px;
-            left: 46%;
+            left: 50%;
+            transform: translateX(-50%);
             z-index: 2;
         }
     }
@@ -29,86 +31,101 @@
 }
 
 .web-nav {
-    display: flex;
     background-color: $primary-color;
-    width: 100%;
     height: 60px;
-    justify-content: center;
-    align-items: center;
     box-shadow: 0px 2px 1px $gray-color;
-    .nav-wrap {
+    .nav-list {
+        display: flex;
+        max-width: 1200px;
         height: 100%;
-        &:hover {
-            border: 1px solid rgba(255, 255, 255, .7);
-            background-color: rgba(0, 0, 0, .7);
-            color: #fff;
-        }
-        .nav-item {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 220px;
+        justify-content: center;
+        align-items: center;
+        margin: 0 auto;
+        .nav-wrap {
             height: 100%;
-            padding: 0px 60px;
-            font-weight: bold;
-            color: #000000;
-            i {
-                margin-right: -1em;
-                transform: scale(0);
-                transition: .2s;
-            }
             &:hover {
+                border: 1px solid rgba(255, 255, 255, .7);
+                background-color: rgba(0, 0, 0, .7);
                 color: #fff;
-                i {
-                    margin-right: 0;
-                    transform: scale(1);
-                }
             }
-            &.dropdown {
-                position: relative;
+            .nav-item {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                height: 100%;
+                padding: 0px 60px;
+                font-weight: bold;
+                color: #000000;
+                i {
+                    margin-right: -1em;
+                    transform: scale(0);
+                    transition: .2s;
+                }
                 &:hover {
-                    cursor: pointer;
-                    .dropdown-content {
-                        display: block;
+                    color: #fff;
+                    i {
+                        margin-right: 0;
+                        transform: scale(1);
                     }
                 }
-                .dropdown-content {
-                    display: none;
-                    position: absolute;
-                    min-width: 220px;
-                    top: 60px;
-                    background-color: rgba(157, 151, 123, .7);
-                    box-shadow: 5px 5px 15px rgba(0,0,0,0.5);
-                    z-index: 2;
-                    .content-list {
-                        border-bottom: 1px solid #fff;
-                        text-align: center;
-                        padding: 10px;
-                        .dropdown-item {
-                            display: none;
+                &.dropdown {
+                    position: relative;
+                    &:hover {
+                        cursor: pointer;
+                        .dropdown-content {
+                            display: block;
                         }
-                        &:hover {
-                            background-color: rgb(95, 89, 68, .7);
+                    }
+                    .dropdown-content {
+                        display: none;
+                        position: absolute;
+                        min-width: 220px;
+                        top: 60px;
+                        background-color: rgba(157, 151, 123, .7);
+                        box-shadow: 5px 5px 15px rgba(0,0,0,0.5);
+                        z-index: 2;
+                        .content-list {
+                            border-bottom: 1px solid #fff;
+                            text-align: center;
+                            padding: 10px;
                             .dropdown-item {
-                                display: block;
-                                position: absolute;
-                                min-width: 220px;
-                                background-color: rgba(157, 151, 123, .7);
-                                left: 100%;
-                                transform: translateY(-10px);
-                                .item-list {
-                                    border-bottom: 1px solid #fff;
-                                    text-align: center;
-                                    padding: 10px;
-                                    &:hover {
-                                        background-color: rgb(95, 89, 68, .7);
+                                display: none;
+                            }
+                            &:hover {
+                                background-color: rgb(95, 89, 68, .7);
+                                .dropdown-item {
+                                    display: block;
+                                    position: absolute;
+                                    min-width: 220px;
+                                    background-color: rgba(157, 151, 123, .7);
+                                    left: 100%;
+                                    transform: translateY(-10px);
+                                    .item-list {
+                                        border-bottom: 1px solid #fff;
+                                        text-align: center;
+                                        padding: 10px;
+                                        &:hover {
+                                            background-color: rgb(95, 89, 68, .7);
+                                        }
                                     }
                                 }
                             }
                         }
                     }
                 }
+    
+                @include pad-pro-less() {
+                    max-width: 120px;
+                }
             }
+        }
+
+        @include pad-pro-less() {
+            max-width: 1024px;
+        }
+        
+        @include mobile-less() {
+            max-width: 765px;
         }
     }
     

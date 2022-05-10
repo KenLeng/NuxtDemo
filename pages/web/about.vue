@@ -84,6 +84,8 @@ export default {
 
 .pt {
     padding-top: 50px;
+    padding-left: 10px;
+    padding-right: 10px;
 }
 .about-wrap {
     display: flex;
@@ -102,7 +104,6 @@ export default {
     }
     .about-context {
         margin: 30px auto 0 auto;
-        width: 900px;
         font-size: 24px;
         line-height: 2.3;
         text-align: center;

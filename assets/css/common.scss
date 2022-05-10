@@ -10,6 +10,14 @@
 }
 
 .content {
-  width: 60%;
+  max-width: 1200px;
   margin: 3px auto 0 auto;
+
+  @include pad-pro-less() {
+    max-width: 1024px;
+  }
+
+  @include mobile-less() {
+    max-width: 765px;
+  }
 }

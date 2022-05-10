@@ -1,0 +1,28 @@
+.info-wrap {
+    margin: 0 auto 35px;
+    background-color: #FBEDB0;
+    border-radius: 7px;
+    margin-left: 30px;
+    margin-right: 30px;
+    .wrap-box {
+        display: flex;
+        flex-direction: column;
+        padding: 25px;
+    }
+
+}
+
+.iframe-map {
+    width: 90%;
+    border: 0px;
+
+    @include pad-pro-less() {
+        margin-left: 30px;
+        margin-right: 30px;
+    }
+
+    @include mobile-less() {
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+}

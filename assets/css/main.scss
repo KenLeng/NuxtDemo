@@ -29,13 +29,16 @@ body {
 //   box-sizing: border-box;
 // }
 @import '@/assets/css/reset.scss';
+@import '@/assets/css/variable.scss';
+@import '@/assets/css/rwd.scss';
 @import '@/assets/css/base.scss';
 @import '@/assets/css/login.scss';
-@import '@/assets/css/default.scss';
-@import '@/assets/css/variable.scss';
+@import '@/assets/css/common.scss';
 
 @import '@/assets/css/layout/member_focus.scss';
 
 @import '@/assets/css/web/header.scss';
 @import '@/assets/css/web/footer.scss';
 @import '@/assets/css/web/products.scss';
+@import '@/assets/css/web/info.scss';
+@import '@/assets/css/web/problem.scss';

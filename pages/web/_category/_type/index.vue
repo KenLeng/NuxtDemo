@@ -2,10 +2,14 @@
     <div class="content-wrap">
         <div class="content">
             <div class="product-wrap">
-                <div class="product-map">{{  }} > {{ test }}</div>
+                <div class="product-map">{{ nav.category  }} > {{ nav.type }}</div>
                 <div class="list-area">
-                    <div v-for="(data, index) in displayProducts" :key="index" class="p-item">
-                        <img :src="data.img" alt="image" width="300"/>
+                    <div v-for="(data, index) in displayProducts" 
+                        :key="index" 
+                        class="p-item"
+                        @click="toDetail(data)"
+                    >
+                        <img :src="data.img" alt="image"/>
                         <div>{{ data.name }}</div>
                     </div>
                 </div>
@@ -55,31 +59,26 @@ export default {
                 ]
             },
             displayProducts: [],
-
-        }
-    },
-
-    watch: {
-        '$route.params': {
-            handler: function () {
-                console.log('watch...')
-            },
-            deep: true,
-            immediate: true
+            nav: {}
         }
     },
 
     mounted() {
-        console.log('products mounted...', this.$route)
-        // this.getProducts()
+        this.nav = this.$route.params
+        // this.getProducts(this.nav)
         // 這是寫死的
         this.displayProducts = this.products['golden']
     },
 
     methods: {
         async getProducts(cond) {
-            console.log(cond)
             // this.products = await restfulGet(cond.category, cond.type)
+        },
+
+        toDetail() {
+            this.$router.push({
+                path: `/web/${this.nav.category}/${this.nav.type}/detail/`
+            })
         }
     }
 }

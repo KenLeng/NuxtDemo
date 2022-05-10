@@ -5,48 +5,50 @@
             <div class="logo" @click="$router.push('/')"></div>
         </div>
         <nav class="web-nav">
-            <div class="nav-wrap">
-                <a class="nav-item" href="javascript:void(0)" @click="$router.push('/web/about')">
-                    <div>
-                        <i class="far fa-info-circle"></i>
-                       關於
-                    </div>
-                </a>
-            </div>
-            <div class="nav-wrap">
-                <div class="nav-item dropdown">
-                    <div>
-                        <i class="fas fa-rings-wedding"></i>
-                        商品款式
-                    </div>
-                    <ul class="dropdown-content">
-                        <li class="content-list" v-for="(category, index) in categories" :key="index">
-                            <ul class="dropdown-item">
-                                <li class="item-list" v-for="(secondCat, index) in category.secondCategories" :key="index"
-                                    @click="redirectProduct(category.category, secondCat.category)">
-                                    {{ secondCat.name }}
-                                </li>
-                            </ul>
-                            {{ category.name }}
-                        </li>
-                    </ul>
+            <div class="nav-list">
+                <div class="nav-wrap">
+                    <a class="nav-item" href="javascript:void(0)" @click="$router.push('/web/about')">
+                        <div>
+                            <i class="far fa-info-circle"></i>
+                        關於
+                        </div>
+                    </a>
                 </div>
-            </div>
-            <div class="nav-wrap">
-                <a class="nav-item" href="javascript:void(0)" @click="$router.push('/web/info')">
-                    <div>
-                        <i class="fas fa-map-marker-alt"></i>
-                        店鋪資訊
+                <div class="nav-wrap">
+                    <div class="nav-item dropdown">
+                        <div>
+                            <i class="fas fa-rings-wedding"></i>
+                            商品款式
+                        </div>
+                        <ul class="dropdown-content">
+                            <li class="content-list" v-for="(category, index) in categories" :key="index">
+                                <ul class="dropdown-item">
+                                    <li class="item-list" v-for="(secondCat, index) in category.secondCategories" :key="index"
+                                        @click="redirectProduct(category.category, secondCat.category)">
+                                        {{ secondCat.name }}
+                                    </li>
+                                </ul>
+                                {{ category.name }}
+                            </li>
+                        </ul>
                     </div>
-                </a>
-            </div>
-            <div class="nav-wrap">
-                <a class="nav-item" href="javascript:void(0)" @click="$router.push('/web/problem')">
-                    <div>
-                        <i class="far fa-question-circle"></i>
-                        常見問題
-                    </div>
-                </a>
+                </div>
+                <div class="nav-wrap">
+                    <a class="nav-item" href="javascript:void(0)" @click="$router.push('/web/info')">
+                        <div>
+                            <i class="fas fa-map-marker-alt"></i>
+                            店鋪資訊
+                        </div>
+                    </a>
+                </div>
+                <div class="nav-wrap">
+                    <a class="nav-item" href="javascript:void(0)" @click="$router.push('/web/problem')">
+                        <div>
+                            <i class="far fa-question-circle"></i>
+                            常見問題
+                        </div>
+                    </a>
+                </div>
             </div>
         </nav>
     </div>
@@ -98,12 +100,7 @@ export default {
 
     methods: {
         redirectProduct(category, type) {
-            let condition = JSON.stringify({ category, type })
-            document.cookie = `_condition=${condition}`
-            this.$router.push({
-                name: 'web-products',
-                params: { category, type }
-            })
+            this.$router.push({ path: `/web/${category}/${type}`})
         }
     }
 }
