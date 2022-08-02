@@ -6,11 +6,17 @@
                 <div class="list-area">
                     <div v-for="(data, index) in displayProducts" 
                         :key="index" 
-                        class="p-item"
+                        class="dib"
                         @click="toDetail(data)"
                     >
-                        <img :src="data.img" alt="image"/>
-                        <div>{{ data.name }}</div>
+                        <div class="p-item">
+                            <div class="item-border">
+                                <div class="item-box">
+                                    <div class="item-img" :style="'background-image:url('+ data.img +')'"></div>
+                                    <div class="item-words">{{ data.name }}</div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

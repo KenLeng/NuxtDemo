@@ -20,7 +20,7 @@
                 <swiper class="swiper" :options="swiperOption" :breakpoints="swiperOption.breakpoints">
                     <swiper-slide v-for="(image, index) in aboutImages" :key="index">
                         <div class="swiper-img">
-                            <img style="width: 250px" :src="image"/>
+                            <img style="width: 100%" :src="image"/>
                         </div>
                     </swiper-slide>
                     <div class="swiper-pagination" slot="pagination"></div>
@@ -40,34 +40,36 @@ import about7 from '@/assets/images/about-7.jpg'
 import about8 from '@/assets/images/about-8.jpg'
 import about9 from '@/assets/images/about-9.jpg'
 
+import Swiper from 'swiper/swiper-bundle.js'
+import 'swiper/swiper-bundle.min.css'
+
 export default {
     name: 'about',
-    data () { 
+    data () {
         return {
             swiperOption: {
-                loop: true,
                 autoplay: {
+                    disableOnInteraction: false,
                     delay: 1500,
-                    disableOnInteraction: false
                 },
                 pagination: {
                     el: '.swiper-pagination',
                     clickable: true
                 },
-                slidesPerView: 5,
-                spaceBetween: 20,
-                observer: true,
                 breakpoints: {
                     1024: {
                         slidesPerView: 5,
+                        slidesPerGroup: 5,
                         spaceBetween: 20
                     },
-                    769: {
+                    720: {
                         slidesPerView: 4,
+                        slidesPerGroup: 4,
                         spaceBetween: 10
                     },
-                    640: {
+                    320: {
                         slidesPerView: 2,
+                        slidesPerGroup: 2,
                         spaceBetween: 10
                     }
                 }
@@ -76,6 +78,14 @@ export default {
                 about1, about2, about3, about4, about5, about6, about7, about8, about9
             ]
         }
+    },
+
+    created() {
+        const swiper = new Swiper('.swiper', {
+            // Optional parameters
+            direction: 'vertical',
+            loop: true,
+        });
     }
 }
 </script>
@@ -86,49 +96,6 @@ export default {
     padding-top: 50px;
     padding-left: 10px;
     padding-right: 10px;
-}
-.about-wrap {
-    display: flex;
-    flex-direction: column;
-    background-color: rgb(95 , 89 , 68, .7);
-    color: #fff;
-    border-top: 10px double rgb(95 , 89 , 68,);
-    border-bottom: 10px double rgb(95 , 89 , 68,);
-    .about-title {
-        margin: 30px auto 20px auto;
-        font-size: 32px;
-        font-weight: bold;
-    }
-    hr {
-        width: 85%;
-    }
-    .about-context {
-        margin: 30px auto 0 auto;
-        font-size: 24px;
-        line-height: 2.3;
-        text-align: center;
-        padding-bottom: 100px;
-        p:nth-child(1) {
-            font-size: 28px;
-            line-height: 2.5;
-        }
-    }
-}
-
-.swiper-wrap {
-    position: relative;
-    margin: 20px auto 0 auto;
-    padding-top: 20px;
-    background-color: rgba(95, 89, 68, 0.4);
-    .swiper-container {
-        padding-bottom: 20px;
-    }
-    .swiper-container-horizontal > .swiper-pagination-bullets {
-        bottom: 4px;
-    }
-    .swiper-img {
-        display: flex;
-    }
 }
 
 </style>

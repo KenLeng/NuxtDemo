@@ -20,13 +20,14 @@ export default {
 
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [
-    '@/assets/css/main.scss'
+    '@/assets/css/main.scss',
+    'swiper/swiper-bundle.css'
   ],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
     "@/plugins/axios",
-    { src: "@/plugins/swiper.js", mode: 'client' },
+    { src: "@/plugins/swiper.js", mode: 'client', ssr: false },
     { src: '@/plugins/vue-fb-customer-chat', ssr: false }
   ],
 

@@ -50,12 +50,58 @@
                     </a>
                 </div>
             </div>
+            
+            <!-- 手機版  -->
+            <div class="nav-bar" @click="showMenu = !showMenu">
+                <i class="far fa-bars"></i>
+            </div>
+            <div v-show="showMenu">
+                <ul class="dropdown-content-mobile">
+                    <li class="nav-item-mobile">
+                        <div @click="directPush('about')">
+                            <div>關於</div>
+                        </div>
+                    </li>
+                    <li class="nav-item-mobile">
+                        <div @click="showCategory = !showCategory">
+                            商品款式
+                            <i class="fas fa-caret-down"></i>
+                        </div>
+                        <ul v-show="showCategory" class="dropdown-item-mobile">
+                            <li class="item-list-mobile" v-for="(category, index) in categories" :key="index" @click="extendToShowType(index)">
+                                <div>
+                                    {{ category.name }}
+                                    <i class="far fa-angle-down"></i>
+                                </div>
+                                <ul v-show="index == selectedType">
+                                    <li class="item-type-mobile" v-for="(secondCat, index) in category.secondCategories" :key="index"
+                                        @click="redirectProduct(category.category, secondCat.category)">
+                                        {{ secondCat.name }}
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="nav-item-mobile">
+                        <div @click="directPush('info')">
+                            <div>店鋪資訊</div>
+                        </div>
+                    </li>
+                    <li class="nav-item-mobile">
+                        <div @click="directPush('problem')">
+                            <div>常見問題</div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
         </nav>
     </div>
 </template>
 
 <script>
 import { getCategories } from '@/utils/apiService.js' 
+import sidemenu from '@/assets/images/sidemenu.png'
+
 export default {
     name: 'header',
     data() {
@@ -91,16 +137,48 @@ export default {
                     category: 'couple',
                     secondCategories: []
                 }
-            ]
+            ],
+            sidemenu: sidemenu,
+            showMenu: false,
+            showCategory: false,
+            selectedType: null
         }
     },
+
+    watch: {
+        showMenu(newValue, oldValue) {
+            if (!newValue) {
+                this.showCategory = false
+                this.showType = false
+            }
+        }
+    },
+
     async mounted() {
         // this.categories = await getCategories()
     },
 
     methods: {
         redirectProduct(category, type) {
+            this.closeMenu()
             this.$router.push({ path: `/web/${category}/${type}`})
+        },
+
+        directPush(path) {
+            this.closeMenu()
+            this.$router.push(`/web/${path}`)
+        },
+
+        extendToShowType(index) {
+            if (this.selectedType === index) {
+                this.selectedType = null
+                return
+            }
+            this.selectedType = index
+        },
+
+        closeMenu() {
+            this.showMenu = false
         }
     }
 }

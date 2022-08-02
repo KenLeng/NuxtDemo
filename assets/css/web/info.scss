@@ -8,6 +8,10 @@
         display: flex;
         flex-direction: column;
         padding: 25px;
+
+        @include mobile-less() {
+            font-size: 14px;
+        }
     }
 
 }

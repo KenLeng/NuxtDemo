@@ -1,36 +1,67 @@
 .product-wrap {
     display: flex;
     flex-direction: column;
-    .product-map {
-        margin: 20px 0 10px 15px;
-    }
 }
+
+.product-map {
+    margin: 20px 0 20px 15px;
+}
+
 .list-area {
-    display: flex;
-    flex-wrap: wrap;
-    width: 100%;
-    justify-content: center;
     .p-item {
-        padding: 20px 25px;
+        margin: 20px 25px;
         cursor: pointer;
-        div {
-            text-align: center;
-            padding-top: 15px;
-        }
-        img {
-            width: 300px;
-            transition-duration: .2s;
-            &:hover {
-                transform: scale(1.1);
-            }
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        position: relative;
+        .item-border {
+            background-color: #fff;
+            .item-box {
+                width: 330px;
+                .item-img {
+                    width: 100%;
+                    height: 330px;
+                    background-size: contain;
+                    background-repeat: no-repeat;
+                    transition-duration: .2s;
+                    &:hover {
+                        transform: scale(1.1);
+                    }
 
-            @include pad-pro-less() {
-                width: 220px;
-            }
+                    @include pad-pro-less() {
+                        height: 220px;
+                    }
+        
+                    @include mobile-less() {
+                        height: 150px;
+                    }
+                }
+                .item-words {
+                    text-align: center;
+                    padding-top: 25px;
+                    padding-bottom: 20px;
+                    font-weight: bold;
+                }
 
-            @include mobile-less() {
-                width: 150px;
+                @include pad-pro-less() {
+                    width: 220px;
+                }
+    
+                @include mobile-less() {
+                    width: 150px;
+                }
             }
         }
+
+        @include mobile-less() {
+            margin: 10px 15px;
+        }
+    }
+
+    @include mobile-less() {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
     }
 }

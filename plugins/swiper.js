@@ -1,5 +1,8 @@
 import Vue from 'vue'
 import VueAwesomeSwiper  from 'vue-awesome-swiper'
-import 'swiper/css/swiper.css'
+import Swiper, { Pagination, Autoplay } from 'swiper'
+Swiper.use([Pagination, Autoplay])
 
-Vue.use(VueAwesomeSwiper)
+export default () => {
+    Vue.use(VueAwesomeSwiper)
+}

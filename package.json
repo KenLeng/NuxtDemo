@@ -16,7 +16,7 @@
     "express": "^4.17.1",
     "moment": "^2.29.1",
     "nuxt": "^2.15.3",
-    "swiper": "^5.4.5",
+    "swiper": "^6.7.5",
     "vue-awesome-swiper": "^4.1.1",
     "vue-fb-customer-chat": "^0.2.0",
     "ws": "^8.2.3"
