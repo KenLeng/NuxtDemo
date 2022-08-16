@@ -7,7 +7,6 @@
                     <div ref="oriImg"
                         :style="'background-image:url('+ demo1 +')'"
                         style="width: 400px; height: 400px; background-repeat: no-repeat; background-size: cover; position: relative">
-                        <div ref="magnifier" class="search"></div>
                     </div>
                     <div class="intro">
                         <div class="bottom-line">黃金戒指（男）</div>
@@ -27,10 +26,8 @@ export default {
     name: 'detail',
     data() {
         return {
-            imgBox: null,
             oriImg: null,
             magnifier: null,
-            zoomImg: null,
             demo1: demo1
         }
     },

@@ -71,14 +71,12 @@ export default {
 
     mounted() {
         this.nav = this.$route.params
-        // this.getProducts(this.nav)
-        // 這是寫死的
-        this.displayProducts = this.products['golden']
+        this.getProducts(this.nav)
     },
 
     methods: {
         async getProducts(cond) {
-            // this.products = await restfulGet(cond.category, cond.type)
+            this.products = await restfulGet(cond.category, cond.type)
         },
 
         toDetail() {

@@ -7,7 +7,7 @@
         <nav class="web-nav">
             <div class="nav-list">
                 <div class="nav-wrap">
-                    <a class="nav-item" href="javascript:void(0)" @click="$router.push('/web/about')">
+                    <a class="nav-item" href="javascript:void(0)" @click="$router.push('/')">
                         <div>
                             <i class="far fa-info-circle"></i>
                         關於
