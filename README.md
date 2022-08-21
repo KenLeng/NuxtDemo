@@ -1,5 +1,7 @@
 # NuxtDemo
 
+需新增.env 設定環境變數
+
 ## Build Setup
 
 ```bash

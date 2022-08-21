@@ -16,7 +16,6 @@
 </template>
 
 <script>
-import { test1, test2 } from '@/utils/apiService.js'
 
 export default {
     name: 'webSocket',

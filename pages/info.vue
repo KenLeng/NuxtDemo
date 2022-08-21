@@ -31,5 +31,18 @@
 <script>
 export default {
     name: 'info',
+    head () {
+        return {
+            title: '店鋪資訊 | 真如意珠寶店',
+            meta: [
+            // hid is used as unique identifier. Do not use `vmid` for it as it will not work
+                {
+                    hid: 'og-title',
+                    name: 'og:title',
+                    content: '店鋪資訊 | 真如意珠寶店'
+                }
+            ]
+        }
+    },
 } 
 </script>

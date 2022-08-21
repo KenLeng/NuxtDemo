@@ -45,6 +45,19 @@ import 'swiper/swiper-bundle.min.css'
 
 export default {
     name: 'about',
+    head () {
+        return {
+            title: '關於 | 真如意珠寶店',
+            meta: [
+            // hid is used as unique identifier. Do not use `vmid` for it as it will not work
+                {
+                    hid: 'og-title',
+                    name: 'og:title',
+                    content: '關於 | 真如意珠寶店'
+                }
+            ]
+        }
+    },
     data () {
         return {
             swiperOption: {

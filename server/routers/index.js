@@ -1,8 +1,14 @@
 const express = require('express')
 const router = express.Router()
+require('dotenv').config()
 const axios = require('axios')
 const javaSideAPI = axios.create({
-    baseURL: 'https://c684-61-227-117-88.ngrok.io/productlist',
+    baseURL: `${process.env.JAVA_API}productlist`,
+})
+
+router.get('/:category/:type', async (req, res, next) => {
+    let result = await javaSideAPI.get(`/${req.params.category}/${req.params.type}`)
+    res.json(result.data)
 })
 
 router.get('/test1', (req, res) => {
@@ -12,12 +18,6 @@ router.get('/test1', (req, res) => {
 router.get('/test2', (req, res, next) => {
     res.json(['good job'])
     next()
-})
-
-router.get('/:category/:type', async (req, res, next) => {
-    let result = await javaSideAPI.get(`/${req.params.category}/${req.params.type}`)
-    console.log(result)
-    res.json(result.data)
 })
 
 module.exports = router

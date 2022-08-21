@@ -34,7 +34,7 @@
                     </div>
                 </div>
                 <div class="nav-wrap">
-                    <a class="nav-item" href="javascript:void(0)" @click="$router.push('/web/info')">
+                    <a class="nav-item" href="javascript:void(0)" @click="$router.push('/info')">
                         <div>
                             <i class="fas fa-map-marker-alt"></i>
                             店鋪資訊
@@ -42,7 +42,7 @@
                     </a>
                 </div>
                 <div class="nav-wrap">
-                    <a class="nav-item" href="javascript:void(0)" @click="$router.push('/web/problem')">
+                    <a class="nav-item" href="javascript:void(0)" @click="$router.push('/problem')">
                         <div>
                             <i class="far fa-question-circle"></i>
                             常見問題
@@ -161,12 +161,12 @@ export default {
     methods: {
         redirectProduct(category, type) {
             this.closeMenu()
-            this.$router.push({ path: `/web/${category}/${type}`})
+            this.$router.push({ path: `/${category}/${type}`})
         },
 
         directPush(path) {
             this.closeMenu()
-            this.$router.push(`/web/${path}`)
+            this.$router.push(`/${path}`)
         },
 
         extendToShowType(index) {

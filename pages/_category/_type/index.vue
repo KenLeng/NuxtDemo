@@ -30,6 +30,19 @@ import { restfulGet } from '@/utils/apiService.js'
 
 export default {
     name: 'products',
+    head () {
+        return {
+            title: '商品款式 | 真如意珠寶店',
+            meta: [
+            // hid is used as unique identifier. Do not use `vmid` for it as it will not work
+                {
+                    hid: 'og-title',
+                    name: 'og:title',
+                    content: '商品款式 | 真如意珠寶店'
+                }
+            ]
+        }
+    },
     data() {
         return {
             products: {
@@ -81,7 +94,7 @@ export default {
 
         toDetail() {
             this.$router.push({
-                path: `/web/${this.nav.category}/${this.nav.type}/detail/`
+                path: `/${this.nav.category}/${this.nav.type}/detail/`
             })
         }
     }
