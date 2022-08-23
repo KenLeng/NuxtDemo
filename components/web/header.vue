@@ -99,7 +99,6 @@
 </template>
 
 <script>
-import { getCategories } from '@/utils/apiService.js' 
 import sidemenu from '@/assets/images/sidemenu.png'
 
 export default {
@@ -114,28 +113,36 @@ export default {
                         { name: '黃金戒指（女）', category: 'wring'},
                         { name: '黃金戒指（男）', category: 'mring'},
                         { name: '黃金對戒', category: 'couplering'},
-                        { name: '黃金手鍊（環）', category: 'bracelet'}
+                        { name: '黃金手鍊（環）', category: 'bracelet'},
+                        { name: '黃金串珠、編繩', category: 'pearl'},
+                        { name: '黃金項鍊（女）', category: 'wnecklace'},
+                        { name: '黃金項鍊（男）', category: 'mnecklace'},
+                        { name: '小寶寶金飾', category: 'baby'},
                     ]
                 }, 
                 { 
                     name: '白金',
                     category: 'platinum',
                     secondCategories: [
-                        { name: '白金戒指', category: 'test' },
-                        { name: '白金項鍊', category: 'platinumtest' }
+                        { name: '白金戒指', category: 'ring' },
+                        { name: '白金項鍊', category: 'necklace' },
+                        { name: '白金手鍊（環）', category: 'bracelet' }
                     ]
                 },
                 {
                     name: '鑽石',
                     category: 'diamond',
                     secondCategories: [
-                        { name: '求婚鑽戒', category: 'test' }
+                        { name: '求婚鑽戒', category: 'couple' },
+                        { name: '鑽石項鍊', category: 'necklace' }
                     ]
                 },
                  {
                     name: '對戒',
                     category: 'couple',
-                    secondCategories: []
+                    secondCategories: [
+                        { name: '結婚對戒', category: 'marriedring' }
+                    ]
                 }
             ],
             sidemenu: sidemenu,
@@ -152,10 +159,6 @@ export default {
                 this.showType = false
             }
         }
-    },
-
-    async mounted() {
-        // this.categories = await getCategories()
     },
 
     methods: {

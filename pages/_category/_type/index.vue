@@ -2,17 +2,17 @@
     <div class="content-wrap">
         <div class="content">
             <div class="product-wrap">
-                <div class="product-map">{{ nav.category  }} > {{ nav.type }}</div>
+                <div class="product-map">{{ category  }} > {{ type }}</div>
                 <div class="list-area">
                     <div v-for="(data, index) in displayProducts" 
                         :key="index" 
                         class="dib"
-                        @click="toDetail(data)"
+                        @click="toDetail(data.detail)"
                     >
                         <div class="p-item">
                             <div class="item-border">
                                 <div class="item-box">
-                                    <div class="item-img" :style="'background-image:url('+ data.img +')'"></div>
+                                    <div class="item-img" :style="'background-image:url(/'+ data.imgName +'.jpg)'"></div>
                                     <div class="item-words">{{ data.name }}</div>
                                 </div>
                             </div>
@@ -78,24 +78,31 @@ export default {
                 ]
             },
             displayProducts: [],
-            nav: {}
+            category: '',
+            type: ''
         }
     },
 
-    mounted() {
-        this.nav = this.$route.params
-        this.getProducts(this.nav)
+    async fetch() {
+        await this.getProducts(this.$route.params)
     },
 
     methods: {
         async getProducts(cond) {
-            this.products = await restfulGet(cond.category, cond.type)
+            const result = await restfulGet(cond.category, cond.type)
+            this.category = result.category
+            this.type = result.type
+            this.displayProducts = result.productList
         },
 
-        toDetail() {
+        toDetail(detailInfo) {
             this.$router.push({
-                path: `/${this.nav.category}/${this.nav.type}/detail/`
+                name: 'category-type-detail',
+                params: { detailInfo }
             })
+            // this.$router.push({
+            //     path: `/${this.$route.params.category}/${this.$route.params.type}/detail/`
+            // })
         }
     }
 }

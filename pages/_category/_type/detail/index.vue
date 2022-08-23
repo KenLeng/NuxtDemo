@@ -32,9 +32,12 @@ export default {
         }
     },
     created() {
+        this.nav = this.$route.params
+        console.log(this.$route.params)
     },
-    mounted() {
-    },
+    // async fetch() {
+    //     this.displayProducts = await restfulGet(this.$route.params.category, this.$route.params.type)
+    // },
 
     methods: {
     }

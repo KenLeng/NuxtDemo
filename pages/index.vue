@@ -1,6 +1,17 @@
 <template>
     <div class="content-wrap">
         <div class="content pt">
+            <div class="swiper-wrap">
+                <swiper class="swiper" :options="swiperOption" :breakpoints="swiperOption.breakpoints">
+                    <swiper-slide v-for="(image, index) in aboutImages" :key="index">
+                        <div class="swiper-img">
+                            <img style="width: 100%" :src="image"/>
+                        </div>
+                    </swiper-slide>
+                    <div class="swiper-pagination" slot="pagination"></div>
+                </swiper>
+            </div>
+            
             <div class="about-wrap">
                 <div class="about-title">真如意珠寶</div>
                 <hr/>
@@ -16,16 +27,7 @@
                     <p>藉此來回饋顧客對我們的支持與信任。</p>
                 </div>
             </div>
-            <div class="swiper-wrap">
-                <swiper class="swiper" :options="swiperOption" :breakpoints="swiperOption.breakpoints">
-                    <swiper-slide v-for="(image, index) in aboutImages" :key="index">
-                        <div class="swiper-img">
-                            <img style="width: 100%" :src="image"/>
-                        </div>
-                    </swiper-slide>
-                    <div class="swiper-pagination" slot="pagination"></div>
-                </swiper>
-            </div>
+            
         </div>
     </div>
 </template>
