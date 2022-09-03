@@ -1,18 +1,19 @@
 # NuxtDemo
 
-需新增.env 設定環境變數
+需新增.env 設定環境變數(可複製.env.example)
 
 ## Build Setup
 
 ```bash
-# install dependencies
+# 安裝node相關套件
 $ npm install
 
-# serve with hot reload at localhost:3000
+# 開發模式，預設3000 port
 $ npm run dev
 
-# build for production and launch server
+# 編譯nuxt程式
 $ npm run build
+# 起server 預設3000 port
 $ npm run start
 
 ```

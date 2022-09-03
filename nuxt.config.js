@@ -2,8 +2,8 @@ import { resolve } from 'path';
 
 export default {
   server: {
-    port: 3000,
-    host: '10.2.0.4'
+    port: process.env.SERVER_PORT,
+    host: process.env.SERVER_HOST
   },
   
   // Global page headers: https://go.nuxtjs.dev/config-head
