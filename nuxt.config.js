@@ -54,7 +54,7 @@ export default {
 
   // To resolve axios in nuxt caused CORS problem
   proxy: {
-    '/api': 'http://localhost:3000/'
+    '/api': 'http://localhost:3001/'
   },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
