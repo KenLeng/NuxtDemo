@@ -1,7 +1,7 @@
 <template>
     <div class="content-wrap">
         <div class="content">
-            <div style="padding: 55px 0px; text-align: center;">
+            <div style="padding: 30px 0px 55px; text-align: center;">
                 <div class="info-wrap">
                     <div class="wrap-box">
                         <div style="display: flex; margin: 10px 0px;">
@@ -15,7 +15,7 @@
                         <div style="display: flex; margin: 10px 0px;">
                             <span>Facebook：</span>
                             <a href="https://www.facebook.com/zhenruyijewelry/" target="_blank">
-                                真如意珠寶店 台南時尚黃金 gia鑽石專賣
+                                真如意珠寶銀樓 台南時尚黃金 gia鑽石專賣
                             </a>
                         </div>
                     </div>
@@ -33,13 +33,13 @@ export default {
     name: 'info',
     head () {
         return {
-            title: '店鋪資訊 | 真如意珠寶店',
+            title: '店鋪資訊 | 真如意珠寶銀樓',
             meta: [
             // hid is used as unique identifier. Do not use `vmid` for it as it will not work
                 {
                     hid: 'og-title',
                     name: 'og:title',
-                    content: '店鋪資訊 | 真如意珠寶店'
+                    content: '店鋪資訊 | 真如意珠寶銀樓'
                 }
             ]
         }

@@ -3,19 +3,19 @@ import { resolve } from 'path';
 export default {
   server: {
     port: 3000,
-    host: '10.0.0.4'
+    host: '10.2.0.4'
   },
   
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    title: 'NuxtDemo',
+    title: '真如意珠寶銀樓Zhenruyi Jewelry',
     htmlAttrs: {
       lang: 'en'
     },
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: '' }
+      { hid: 'description', name: 'description', content: '真如意珠寶銀樓Zhenruyi Jewelry 位於台南市歸仁區，擁有多種款式，我們提供黃金飾品、鉑金飾品、K金飾品、GIA認證鑽石、求婚鑽戒、結婚對戒、翡翠玉品、天然珍珠飾品、珠寶設計客製化服務…等等。『誠信、創新、服務』一直是我們承諾的三大保證，秉持以客為本的理念重點，提供優良的服務和品質保證且未來將繼續提升各方面服務項目來永續經營，藉此來回饋顧客對我們的支持與信任。' }
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },

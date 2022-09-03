@@ -82,13 +82,13 @@ export default {
     name: 'problem',
     head () {
         return {
-            title: '常見問題 | 真如意珠寶店',
+            title: '常見問題 | 真如意珠寶銀樓',
             meta: [
             // hid is used as unique identifier. Do not use `vmid` for it as it will not work
                 {
                     hid: 'og-title',
                     name: 'og:title',
-                    content: '常見問題 | 真如意珠寶店'
+                    content: '常見問題 | 真如意珠寶銀樓'
                 }
             ]
         }

@@ -1,27 +1,33 @@
 .about-wrap {
     display: flex;
     flex-direction: column;
-    background-color: rgb(95 , 89 , 68, .7);
+    background-color: rgb(95 , 89 , 68, .6);
     color: #fff;
     border-top: 10px double rgb(95 , 89 , 68,);
     border-bottom: 10px double rgb(95 , 89 , 68,);
     .about-title {
         margin: 30px auto 20px auto;
-        font-size: 32px;
+        font-size: 72px;
         font-weight: bold;
+
+        @include mobile-less() {
+            font-size: 44px;
+        }
     }
     hr {
-        width: 85%;
+        width: 90%;
     }
     .about-context {
-        margin: 30px auto 0 auto;
+        margin-top: 30px;
         font-size: 24px;
         line-height: 2.3;
         text-align: center;
-        padding-bottom: 100px;
-        p:nth-child(1) {
-            font-size: 28px;
-            line-height: 2.5;
+        padding: 0 100px 50px 100px;
+
+        @include mobile-less() {
+            font-size: 18px;
+            padding-left: 15px;
+            padding-right: 15px;
         }
     }
 }
@@ -47,5 +53,70 @@
         @include mobile-less() {
             width: 160px;
         }
+    }
+}
+
+.title-word {
+    font-family: cursive;
+    // animation: color-animation 4s linear infinite;
+    color: #000000;
+}
+  
+.title-word-1 {
+    --color-1: #DF8453;
+    --color-2: #3D8DAE;
+    --color-3: #E4A9A8;
+}
+.title-word-2 {
+    --color-1: #DBAD4A;
+    --color-2: #ACCFCB;
+    --color-3: #17494D;
+}
+.title-word-3 {
+    --color-1: #ACCFCB;
+    --color-2: #E4A9A8;
+    --color-3: #ACCFCB;
+}
+.title-word-4 {
+    --color-1: #3D8DAE;
+    --color-2: #DF8453;
+    --color-3: #E4A9A8;
+}
+.title-word-5 {
+    --color-1: #ACCFCB;
+    --color-2: #17494D;
+    --color-3: #3D8DAE;
+}
+  
+@keyframes color-animation {
+    0%    {color: var(--color-1)}
+    32%   {color: var(--color-1)}
+    33%   {color: var(--color-2)}
+    65%   {color: var(--color-2)}
+    66%   {color: var(--color-3)}
+    99%   {color: var(--color-3)}
+    100%  {color: var(--color-1)}
+}
+
+
+.lineUp {
+    animation: 2s anim-lineUp ease-out;
+}
+
+@keyframes anim-lineUp {
+    0% {
+        opacity: 0;
+        transform: translateY(80%);
+    }
+    20% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+        transform: translateY(0%);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0%);
     }
 }

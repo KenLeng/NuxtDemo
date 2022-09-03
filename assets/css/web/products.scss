@@ -4,6 +4,7 @@
 }
 
 .product-map {
+    font-weight: bold;
     margin: 20px 0 20px 15px;
 }
 
@@ -22,8 +23,6 @@
                 .item-img {
                     width: 100%;
                     height: 330px;
-                    background-size: contain;
-                    background-repeat: no-repeat;
                     transition-duration: .2s;
                     &:hover {
                         transform: scale(1.1);

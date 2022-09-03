@@ -58,7 +58,7 @@
             <div v-show="showMenu">
                 <ul class="dropdown-content-mobile">
                     <li class="nav-item-mobile">
-                        <div @click="directPush('about')">
+                        <div @click="directPush('')">
                             <div>關於</div>
                         </div>
                     </li>
@@ -99,7 +99,6 @@
 </template>
 
 <script>
-import sidemenu from '@/assets/images/sidemenu.png'
 
 export default {
     name: 'header',
@@ -112,21 +111,21 @@ export default {
                     secondCategories: [
                         { name: '黃金戒指（女）', category: 'wring'},
                         { name: '黃金戒指（男）', category: 'mring'},
-                        { name: '黃金對戒', category: 'couplering'},
-                        { name: '黃金手鍊（環）', category: 'bracelet'},
-                        { name: '黃金串珠、編繩', category: 'pearl'},
-                        { name: '黃金項鍊（女）', category: 'wnecklace'},
-                        { name: '黃金項鍊（男）', category: 'mnecklace'},
+                        { name: '黃金對戒', category: 'cpring'},
+                        { name: '墜子', category: 'pendant'},
                         { name: '小寶寶金飾', category: 'baby'},
+                        { name: '收藏', category: 'collection'},
+                        { name: '金塊', category: 'block'},
+                        { name: '其他', category: 'others'},
                     ]
                 }, 
                 { 
                     name: '白金',
-                    category: 'platinum',
+                    category: 'silver',
                     secondCategories: [
-                        { name: '白金戒指', category: 'ring' },
-                        { name: '白金項鍊', category: 'necklace' },
-                        { name: '白金手鍊（環）', category: 'bracelet' }
+                        { name: '項鍊（男）', category: 'mnecklace' },
+                        { name: '項鍊（女）', category: 'wnecklace' },
+                        { name: '對戒', category: 'cpring' }
                     ]
                 },
                 {
@@ -145,7 +144,6 @@ export default {
                     ]
                 }
             ],
-            sidemenu: sidemenu,
             showMenu: false,
             showCategory: false,
             selectedType: null

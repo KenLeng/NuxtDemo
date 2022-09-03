@@ -13,17 +13,23 @@
             </div>
             
             <div class="about-wrap">
-                <div class="about-title">真如意珠寶</div>
+                <div class="about-title">
+                    <span class="title-word">真</span>
+                    <span class="title-word">如</span>
+                    <span class="title-word">意</span>
+                    <span class="title-word">珠</span>
+                    <span class="title-word">寶</span>
+                    <span class="title-word">銀</span>
+                    <span class="title-word">樓</span>
+                </div>
                 <hr/>
-                <div class="about-context">
-                    <p>
-                        <strong>『誠信、創新、服務』</strong><br>
-                    </p>
-                    <p>一直是我們承諾的三大保證，</p>
-                    <p>服務項目包含產品設計、品牌代理、專業工藝技術服務等。</p>
-                    <p>秉持以客為本的理念重點，</p>
-                    <p>提供優良的服務和品質保證且專心致力業務發展以及創新理念的提升，</p>
-                    <p>未來將繼續提升各方面服務項目來永續經營，</p>
+                <div class="about-context lineUp">
+                    <p>真如意珠寶銀樓Zhenruyi Jewelry 位於台南市歸仁區，擁有多種款式</p>
+                    <p>我們提供黃金飾品、鉑金飾品、K金飾品、GIA認證鑽石、求婚鑽戒、結婚對戒、</p>
+                    <p>翡翠玉品、天然珍珠飾品、珠寶設計客製化服務…等等。</p>
+                    <p>『誠信、創新、服務』一直是我們承諾的三大保證</p>
+                    <p>秉持以客為本的理念重點</p>
+                    <p>提供優良的服務和品質保證且未來將繼續提升各方面服務項目來永續經營</p>
                     <p>藉此來回饋顧客對我們的支持與信任。</p>
                 </div>
             </div>
@@ -49,13 +55,13 @@ export default {
     name: 'about',
     head () {
         return {
-            title: '關於 | 真如意珠寶店',
+            title: '關於 | 真如意珠寶銀樓',
             meta: [
             // hid is used as unique identifier. Do not use `vmid` for it as it will not work
                 {
                     hid: 'og-title',
                     name: 'og:title',
-                    content: '關於 | 真如意珠寶店'
+                    content: '關於 | 真如意珠寶銀樓'
                 }
             ]
         }
@@ -108,7 +114,7 @@ export default {
 <style lang="scss" scope>
 
 .pt {
-    padding-top: 50px;
+    padding-top: 30px;
     padding-left: 10px;
     padding-right: 10px;
 }

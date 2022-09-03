@@ -2,16 +2,15 @@
     <div class="content-wrap">
         <div class="content">
             <div class="detail-wrap">
-                <div class="product-map">黃金 > 戒指 > 黃金戒指（男）</div>
-                <div style="display: flex; justify-content: space-evenly;">
-                    <div ref="oriImg"
-                        :style="'background-image:url('+ demo1 +')'"
-                        style="width: 400px; height: 400px; background-repeat: no-repeat; background-size: cover; position: relative">
-                    </div>
+                <div class="product-map">{{ detailInfo.category }} > {{ detailInfo.typeName }}</div>
+                <div style="display: flex; justify-content: space-evenly; flex-wrap: wrap">
+                    <img class="img-wrap" :src="getAssetsImage(detailInfo.productList.imgName)" />
                     <div class="intro">
-                        <div class="bottom-line">黃金戒指（男）</div>
-                        <div class="bottom-line">重量 : 100g</div>
-                        <div class="bottom-line">介紹介紹介紹介紹介紹介紹</div>
+                        <div class="bottom-line">
+                            <p>詳情請致電06-2300303</p>
+                            <br>
+                            <a href="../../info">前往店鋪資訊</a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -20,26 +19,23 @@
 </template>
 
 <script>
-import demo1 from '@/assets/images/demo1.png'
+import { Base64 } from 'js-base64';
 
 export default {
     name: 'detail',
     data() {
         return {
-            oriImg: null,
-            magnifier: null,
-            demo1: demo1
+            detailInfo: {}
         }
     },
     created() {
-        this.nav = this.$route.params
-        console.log(this.$route.params)
+        this.detailInfo = JSON.parse(Base64.decode(this.$route.query.product))
     },
-    // async fetch() {
-    //     this.displayProducts = await restfulGet(this.$route.params.category, this.$route.params.type)
-    // },
 
     methods: {
+        getAssetsImage(name) {
+            return require(`@/assets/images/product/${name}.jpg`)
+        },
     }
 }
 </script>
