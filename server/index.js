@@ -2,7 +2,6 @@ const app = require('express')()
 const bodyParser = require('body-parser')
 // const webSocket = require('./webSocketUtil.js')
 const router = require('./routers/index')
-const port = 3001
 
 // webSocket.init()
 app.use(router)
@@ -11,9 +10,11 @@ app.use(router)
 app.use(bodyParser.urlencoded({extended: true}))
 app.use(bodyParser.json())
 
-app.listen(port, () => {
-    console.log(`Example app listening at http://localhost:${port}`)
+// Listen the server
+app.listen(process.env.NUXT_SERVER_PORT, () => {
+    console.log(`Example app listening at http://localhost:${process.env.NUXT_SERVER_PORT}`)
 })
+
 
 // Export the server middleware
 module.exports.app = app

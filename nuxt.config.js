@@ -2,8 +2,8 @@ import { resolve } from 'path';
 
 export default {
   server: {
-    port: process.env.SERVER_PORT,
-    host: process.env.SERVER_HOST
+    port: process.env.PROXY_SERVER_PORT,
+    host: process.env.PROXY_SERVER_HOST
   },
   
   // Global page headers: https://go.nuxtjs.dev/config-head
@@ -54,7 +54,7 @@ export default {
 
   // To resolve axios in nuxt caused CORS problem
   proxy: {
-    '/api': 'http://localhost:3001/'
+    '/api': `http://localhost:${process.env.NUXT_SERVER_PORT}/`
   },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
