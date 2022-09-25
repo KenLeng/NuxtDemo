@@ -112,6 +112,7 @@ export default {
                         { name: '黃金戒指（女）', category: 'wring'},
                         { name: '黃金戒指（男）', category: 'mring'},
                         { name: '黃金對戒', category: 'cpring'},
+                        { name: '手鍊(環)', category: 'wristband'},
                         { name: '墜子', category: 'pendant'},
                         { name: '小寶寶金飾', category: 'baby'},
                         { name: '收藏', category: 'collection'},
@@ -125,6 +126,7 @@ export default {
                     secondCategories: [
                         { name: '項鍊（男）', category: 'mnecklace' },
                         { name: '項鍊（女）', category: 'wnecklace' },
+                        { name: '手鍊(環)', category: 'wristband'},
                         { name: '對戒', category: 'cpring' }
                     ]
                 },
