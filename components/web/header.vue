@@ -114,7 +114,7 @@ export default {
                         { name: '黃金對戒', category: 'cpring'},
                         { name: '手鍊(環)', category: 'wristband'},
                         { name: '墜子', category: 'pendant'},
-                        { name: '小寶寶金飾', category: 'baby'},
+                        { name: '黃金寶寶彌月', category: 'baby'},
                         { name: '收藏', category: 'collection'},
                         { name: '金塊', category: 'block'},
                         { name: '其他', category: 'others'},

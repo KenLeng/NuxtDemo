@@ -5,7 +5,7 @@
                 <swiper class="swiper" :options="swiperOption" :breakpoints="swiperOption.breakpoints">
                     <swiper-slide v-for="(image, index) in aboutImages" :key="index">
                         <div class="swiper-img">
-                            <img style="width: 100%" :src="image"/>
+                            <img style="width: 100%" :src="image" alt="picture" />
                         </div>
                     </swiper-slide>
                     <div class="swiper-pagination" slot="pagination"></div>
@@ -55,13 +55,13 @@ export default {
     name: 'about',
     head () {
         return {
-            title: '關於 | 真如意珠寶銀樓',
+            title: '真如意珠寶銀樓',
             meta: [
             // hid is used as unique identifier. Do not use `vmid` for it as it will not work
                 {
                     hid: 'og-title',
                     name: 'og:title',
-                    content: '關於 | 真如意珠寶銀樓'
+                    content: '真如意珠寶銀樓'
                 }
             ]
         }

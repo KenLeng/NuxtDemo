@@ -12,7 +12,7 @@
                         <div class="p-item">
                             <div class="item-border">
                                 <div class="item-box">
-                                    <img class="item-img" :src="getAssetsImage(data.productList.imgName)" />
+                                    <img class="item-img" :src="getAssetsImage(data.productList.imgName)" :alt="data.typeName" />
                                     <!-- <div class="item-words">{{ data.name }}</div> -->
                                 </div>
                             </div>
@@ -64,7 +64,11 @@ export default {
         },
 
         getAssetsImage(name) {
-            return require(`@/assets/images/product/${name}.jpg`)
+            try {
+                return require(`@/assets/images/product/${name}.jpg`)
+            } catch(error) {
+                console.error(error)
+            }
         },
 
         toDetail(detailInfo) {

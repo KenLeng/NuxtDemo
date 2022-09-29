@@ -12,6 +12,7 @@
 .content {
   max-width: 1320px;
   margin: 3px auto 0 auto;
+  min-height: calc(100vh - 200px);
 
   @include pad-pro-less() {
     max-width: 1024px;

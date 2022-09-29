@@ -4,7 +4,7 @@
             <div class="detail-wrap">
                 <div class="product-map">{{ detailInfo.category }} > {{ detailInfo.typeName }}</div>
                 <div style="display: flex; justify-content: space-evenly; flex-wrap: wrap">
-                    <img class="img-wrap" :src="getAssetsImage(detailInfo.productList.imgName)" />
+                    <img class="img-wrap" :src="getAssetsImage(detailInfo.productList.imgName)" :alt="detailInfo.typeName" />
                     <div class="intro">
                         <div class="bottom-line">
                             <p>詳情請致電06-2300303</p>
