@@ -45,11 +45,42 @@ export default {
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
-    "@nuxtjs/axios"
+    "@nuxtjs/axios",
+    "@nuxtjs/sitemap"
   ],
 
   axios: {
     proxy: true
+  },
+
+  sitemap: {
+    hostname: 'http://zhenruyijewelry.com/',
+    path: '/sitemap.xml',
+    exclude: [
+      '/admin',
+      '/admin/**'
+    ],
+    routes: [
+      '/',
+      '/info',
+      '/problem',
+      '/golden/wring',
+      '/golden/mring',
+      '/golden/cpring',
+      '/golden/wristband',
+      '/golden/pendant',
+      '/golden/baby',
+      '/golden/collection',
+      '/golden/block',
+      '/golden/others',
+      '/silver/mnecklace',
+      '/silver/wnecklace',
+      '/silver/wristband',
+      '/silver/cpring',
+      '/diamond/couple',
+      '/diamond/necklace',
+      '/couple/marriedring'
+    ]
   },
 
   // To resolve axios in nuxt caused CORS problem
