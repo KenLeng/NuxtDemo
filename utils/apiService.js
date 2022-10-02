@@ -1,6 +1,6 @@
 import axios from 'axios'
 const apiFactory  = axios.create({
-    baseURL: 'http://www.zhenruyijewelry.com/api/'
+    baseURL: `${window.location.origin}/api/`
     // baseURL: 'http://localhost/api/'
 })
 
