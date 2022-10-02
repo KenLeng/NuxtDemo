@@ -56,10 +56,7 @@ export default {
   sitemap: {
     hostname: 'http://zhenruyijewelry.com/',
     path: '/sitemap.xml',
-    exclude: [
-      '/admin',
-      '/admin/**'
-    ],
+    exclude: [],
     routes: [
       '/',
       '/info',
