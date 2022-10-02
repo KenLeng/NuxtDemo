@@ -34,7 +34,11 @@ export default {
 
     methods: {
         getAssetsImage(name) {
-            return require(`@/assets/images/product/${name}.jpg`)
+            try {
+                return `${this.$store.state.imgConfig.img_url}/${name}.jpg?${this.$store.state.imgConfig.img_expiration}`
+            } catch(error) {
+                console.error(error)
+            }
         },
     }
 }

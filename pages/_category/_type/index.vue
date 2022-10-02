@@ -65,7 +65,7 @@ export default {
 
         getAssetsImage(name) {
             try {
-                return require(`@/assets/images/product/${name}.jpg`)
+                return `${this.$store.state.imgConfig.img_url}/${name}.jpg?${this.$store.state.imgConfig.img_expiration}`
             } catch(error) {
                 console.error(error)
             }
